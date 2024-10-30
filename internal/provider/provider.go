@@ -55,7 +55,7 @@ func Provider() *schema.Provider {
 		},
 		ConfigureContextFunc: providerConfigure,
 		ResourcesMap: map[string]*schema.Resource{
-			"azuredevops_pat": resourceAzureDevOpsPAT(),
+			"azuredevopspat": resourceAzureDevOpsPAT(),
 		},
 	}
 }
