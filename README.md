@@ -20,18 +20,19 @@ terraform {
     }
   }
 }
+```
 Run terraform init to download the provider.
 
 Provider Configuration
 
 The provider can be configured with the following parameters:
-
+```hcl
 provider "azuredevops_pat" {
   organization = "DevOps-SST"
   project      = "YourProjectName"
   api_version  = "7.1-preview.1"
 }
-
+```
 •	organization: The Azure DevOps organization name.
 •	project (optional): The Azure DevOps project name.
 •	api_version (optional): The Azure DevOps REST API version, defaulting to 7.1-preview.1.
@@ -41,7 +42,7 @@ Resource: azuredevops_pat
 The azuredevops_pat resource manages Personal Access Tokens (PATs) in Azure DevOps.
 
 Example Usage
-
+```hcl
 resource "azuredevops_pat" "example_pat" {
   display_name      = "example-pat"
   scope             = "app_token"
@@ -49,7 +50,7 @@ resource "azuredevops_pat" "example_pat" {
   expiration_days   = 30
   all_organization  = true
 }
-
+```
 Argument Reference
 
 •	display_name (Required): The name of the PAT for easy identification.
@@ -64,25 +65,27 @@ Argument Reference
 Example with Renewal Check
 
 This configuration checks daily for renewal:
+```hcl
 resource "azuredevops_pat" "daily_pat" {
   display_name      = "daily-pat"
   scope             = "app_token"
   renew_before_days = 1
-  expiration_days   = 1
+  expiration_days   = 2
   all_organization  = false
 }
-
+```
 In this case, Terraform will renew the PAT every day by revoking and recreating it if the token is near expiration.
 
 Importing an Existing PAT
-
+```hcl
 terraform import azuredevops_pat.example_pat <authorization_id>
+```
 To import an existing PAT into Terraform, use the following command with its authorization ID:
 
 Example Configuration with Multiple PATs
 
 You can also define multiple PAT resources:
-
+```hcl
 resource "azuredevops_pat" "pat_analytics" {
   display_name      = "analytics-pat"
   scope             = "vso.analytics"
@@ -96,7 +99,7 @@ resource "azuredevops_pat" "pat_code" {
   renew_before_days = 30
   expiration_days   = 180
 }
-
+```
 License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
