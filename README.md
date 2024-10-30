@@ -30,7 +30,7 @@ The provider can be configured with the following parameters:
 provider "azuredevops_pat" {
   organization = "DevOps-SST"
   project      = "YourProjectName"
-  api_version  = "7.1-preview.1"
+  api_version  = "7.2-preview.1"
 }
 ```
 •	organization: The Azure DevOps organization name.
