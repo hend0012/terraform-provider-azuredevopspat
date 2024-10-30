@@ -46,6 +46,3 @@ signs:
 release:
   # Optionally set draft to true if you want to review before publishing
   # draft: true
-
-changelog:
-  skip: true
