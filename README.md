@@ -27,7 +27,7 @@ Provider Configuration
 
 The provider can be configured with the following parameters:
 ```hcl
-provider "azuredevops_pat" {
+provider "azuredevopspat" {
   organization = "DevOps-SST"
   project      = "YourProjectName"
   api_version  = "7.2-preview.1"
@@ -43,7 +43,7 @@ The azuredevops_pat resource manages Personal Access Tokens (PATs) in Azure DevO
 
 Example Usage
 ```hcl
-resource "azuredevops_pat" "example_pat" {
+resource "azuredevopspat" "example_pat" {
   display_name      = "example-pat"
   scope             = "app_token"
   renew_before_days = 7
@@ -66,7 +66,7 @@ Example with Renewal Check
 
 This configuration checks daily for renewal:
 ```hcl
-resource "azuredevops_pat" "daily_pat" {
+resource "azuredevopspat" "daily_pat" {
   display_name      = "daily-pat"
   scope             = "app_token"
   renew_before_days = 1
@@ -78,7 +78,7 @@ In this case, Terraform will renew the PAT every day by revoking and recreating 
 
 Importing an Existing PAT
 ```hcl
-terraform import azuredevops_pat.example_pat <authorization_id>
+terraform import azuredevopspat.example_pat <authorization_id>
 ```
 To import an existing PAT into Terraform, use the following command with its authorization ID:
 
@@ -86,14 +86,14 @@ Example Configuration with Multiple PATs
 
 You can also define multiple PAT resources:
 ```hcl
-resource "azuredevops_pat" "pat_analytics" {
+resource "azuredevopspat" "pat_analytics" {
   display_name      = "analytics-pat"
   scope             = "vso.analytics"
   renew_before_days = 7
   expiration_days   = 90
 }
 
-resource "azuredevops_pat" "pat_code" {
+resource "azuredevopspat" "pat_code" {
   display_name      = "code-pat"
   scope             = "vso.code"
   renew_before_days = 30
