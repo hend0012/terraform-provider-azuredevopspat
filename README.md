@@ -15,7 +15,7 @@ To use this provider, add the following to your Terraform configuration:
 terraform {
   required_providers {
     azuredevops_pat = {
-      source = "your-registry/azuredevops_pat"
+      source = "your-registry/azuredevopspat"
       version = "1.0.0"
     }
   }
