@@ -14,7 +14,7 @@ To use this provider, add the following to your Terraform configuration:
 ```hcl
 terraform {
   required_providers {
-    azuredevops_pat = {
+    azuredevopspat = {
       source = "your-registry/azuredevopspat"
       version = "1.0.0"
     }
