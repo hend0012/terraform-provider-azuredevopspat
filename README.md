@@ -53,14 +53,14 @@ resource "azuredevopspat" "example_pat" {
 ```
 Argument Reference
 
-•	display_name (Required): The name of the PAT for easy identification.
-•	scope (Required): The scope of the PAT. Common values are app_token or more specific scopes such as vso.analytics.
-•	renew_before_days (Optional): Number of days before the PAT expiration to trigger renewal.
-•	expiration_days (Required): Number of days for the token’s validity period.
-•	all_organization (Optional): Boolean indicating if the PAT applies to all organizations. Note: This cannot be updated directly; tokens with this option must be recreated if changed.
-•	token (Computed, Sensitive): The generated PAT token value.
-•	authorization_id (Computed): Unique authorization ID for the PAT.
-•	valid_to (Computed): Expiration date of the token.
+- display_name (Required): The name of the PAT for easy identification.
+- scope (Required): The scope of the PAT. Common values are app_token or more specific scopes such as vso.analytics.
+- renew_before_days (Optional): Number of days before the PAT expiration to trigger renewal.
+-	expiration_days (Required): Number of days for the token’s validity period.
+-	all_organization (Optional): Boolean indicating if the PAT applies to all organizations. Note: This cannot be updated directly; tokens with this option must be recreated if changed.
+-	token (Computed, Sensitive): The generated PAT token value.
+-	authorization_id (Computed): Unique authorization ID for the PAT.
+-	valid_to (Computed): Expiration date of the token.
 
 Example with Renewal Check
 
